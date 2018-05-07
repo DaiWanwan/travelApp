@@ -6,10 +6,10 @@
 </template>
 
 <script type="text/ecmascript-6">
-export default {
-  name: 'App'
-}
+  export default {
+    name: 'App'
+  }
 </script>
 
-<style>
+<style lang="stylus" rel="stylesheet/stylus">
 </style>
