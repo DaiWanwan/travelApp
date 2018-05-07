@@ -2,7 +2,7 @@
   <div>
     <div class="title">热销推荐</div>
     <ul>
-      <li class="item" border-bottom v-for="item of recommendList" :key="item.id">
+      <li class="item" border-bottom v-for="item of list" :key="item.id">
         <img class="item-img"
              :src="item.imgUrl" :alt="item.title">
         <div class="item-info">
@@ -17,41 +17,8 @@
 <script type="text/ecmascript-6">
   export default {
     name: 'HomeRecommend',
-    data() {
-      return {
-        recommendList: [
-          {
-            id: '001',
-            imgUrl: 'http://img1.qunarzz.com/sight/p0/1504/47/4730a0c01664b63d.water.jpg_200x200_d7f52253.jpg',
-            title: '武汉海昌极地海洋世界',
-            desc: '极地海洋主题公园，不一样的极地世界。'
-          },
-          {
-            id: '002',
-            imgUrl: 'http://img1.qunarzz.com/sight/p0/1705/99/99cad7081abb9771a3.img.jpg_200x200_d86753f0.jpg',
-            title: '知音号游船',
-            desc: '《知音号》是一个我们自己走进去、找出来故事的行为方式。'
-          },
-          {
-            id: '003',
-            imgUrl: 'http://img1.qunarzz.com/sight/p0/1803/a5/a5302ccb14eafdfda3.img.jpg_200x200_7a886dbc.jpg',
-            title: '木兰天池',
-            desc: '帅的人都去过了😎，你还等什么~'
-          },
-          {
-            id: '004',
-            imgUrl: 'http://img1.qunarzz.com/sight/p0/1603/b1/b1da46b5326eb99e90.water.jpg_200x200_2f0a2f3f.jpg',
-            title: '武汉欢乐谷',
-            desc: '100余项游乐设备，让你玩到爽！'
-          },
-          {
-            id: '005',
-            imgUrl: 'http://img1.qunarzz.com/sight/p0/1505/bb/bb978d0b35e4965c.water.jpg_200x200_d705f205.jpg',
-            title: '汉秀剧场',
-            desc: '日登黄鹤楼，夜赏楚汉秀~'
-          }
-        ]
-      }
+    props: {
+      list: Array
     }
   }
 </script>
