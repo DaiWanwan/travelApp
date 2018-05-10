@@ -2,7 +2,7 @@
   <ul class="list">
     <li class="item" v-for="item of letters" :key="item" :ref="item"
         @click="handleLetterClick"
-        @touchstart="handleTouchStart"
+        @touchstart.prevent="handleTouchStart"
         @touchmove="handleTouchMove"
         @touchend="handleTouchEnd">
       {{item}}
@@ -47,12 +47,12 @@
             clearTimeout(this.timer)
           }
           this.timer = setTimeout(() => {
-            const touchY = e.touches[0].clientY - 74
-            const _index = Math.floor((touchY - this.startY) / 20)
-            if (_index >= 0 && _index < this.letters.length) {
-              this.$emit('change', this.letters[_index])
-            }
-          }, 16)
+              const touchY = e.touches[0].clientY - 79
+              const index = Math.floor((touchY - this.startY) / 20)
+              if (index >= 0 && index < this.letters.length) {
+            this.$emit('change', this.letters[index])
+          }
+        }, 16)
         }
       },
       handleTouchEnd() {
